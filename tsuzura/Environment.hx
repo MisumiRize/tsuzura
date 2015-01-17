@@ -11,7 +11,7 @@ class Environment {
 	public function new() {
 		libfilePath = locateLibfile();
 		if (libfilePath == null) throw 'libfile.json not found';
-		installPath = Path.join([Path.directory(libfilePath), '.tsuzura']);
+		installPath = Path.join([Path.directory(libfilePath), '.haxelib']);
 	}
 
 	function locateLibfile():String {

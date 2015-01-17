@@ -1,6 +1,5 @@
 package tsuzura.cli;
 
-import sys.io.Process;
 import tsuzura.Installer;
 import tsuzura.Environment;
 
@@ -12,7 +11,6 @@ class InstallCommand extends halc.Command {
 		action = function(context:halc.Context) {
 			doInstall(context);
 		}
-		appendFlag(new halc.Flag<String>('libfile', '', ''));
 	}
 
 	public function doInstall(context:halc.Context) {
