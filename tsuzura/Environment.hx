@@ -8,14 +8,14 @@ class Environment {
 	var libfilePath:String;
 	public var installPath(default, null):String;
 
-	public function new() {
-		libfilePath = locateLibfile();
+	public function new(cwd:String) {
+		libfilePath = locateLibfile(cwd);
 		if (libfilePath == null) throw 'libfile.json not found';
 		installPath = Path.join([Path.directory(libfilePath), '.haxelib']);
 	}
 
-	function locateLibfile():String {
-		var current = Sys.getCwd();
+	function locateLibfile(cwd:String):String {
+		var current = cwd;
 		var previous = '';
 
 		while (current != '/' && current != previous) {

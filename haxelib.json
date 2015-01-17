@@ -1,0 +1,9 @@
+{
+	"name": "tsuzura",
+	"license": "MIT",
+	"tags": [],
+	"description": "Haxelib dependency manager",
+	"version": "0.0.1",
+	"contributors": [ "misumirize" ],
+	"dependencies": {}
+}

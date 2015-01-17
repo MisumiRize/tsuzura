@@ -14,7 +14,8 @@ class InstallCommand extends halc.Command {
 	}
 
 	public function doInstall(context:halc.Context) {
-		var env = new Environment();
+		var cwd = context.args()[0];
+		var env = new Environment(cwd);
 		var definition = env.loadDefinition();
 		var installer = new Installer(env);
 		installer.install(definition);
