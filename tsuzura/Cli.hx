@@ -5,10 +5,12 @@ import tsuzura.cli.InstallCommand;
 class Cli {
 
 	static public function main() {
-		var app = new halc.App('tsuzura');
 		var install = new InstallCommand();
-		app.appendCommand(install);
-		app.action = install.action;
+		var app = new halc.App({
+			name:'tsuzura',
+			action:install.action,
+			commands:[install],
+		});
 		app.run(Sys.args());
 	}
 }

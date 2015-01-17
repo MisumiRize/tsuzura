@@ -6,11 +6,14 @@ import tsuzura.Environment;
 class InstallCommand extends halc.Command {
 
 	public function new() {
-		super('install');
-		shortName = 'i';
-		action = function(context:halc.Context) {
-			doInstall(context);
-		}
+		super({
+			name:'install',
+			shortName:'i',
+			usage:'Install the libs specified by libfile.json',
+			action:function(context:halc.Context) {
+				doInstall(context);
+			},
+		});
 	}
 
 	public function doInstall(context:halc.Context) {
